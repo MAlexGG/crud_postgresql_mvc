@@ -1,5 +1,9 @@
 package com.femcoders;
 
+/* import com.femcoders.controller.BookController;
+import com.femcoders.model.Book;
+import com.femcoders.model.BookDAO; */
+
 /* import java.util.List;
 
 import com.femcoders.controller.BookController;
@@ -59,6 +63,15 @@ public class App
             System.out.println(book.getIsbn());
         }
         */
+
+        //PARA COMPROBAR addBook del controller
+        /* 
+        Book book = new Book(1, "Delirius New York", "Rem Koolhaas", 1234567898765L);
+        BookDAO bookDAO = new BookDAO();
+        BookController bookController = new BookController(bookDAO);
+        bookController.addBook(book);
+        */
+
         
 
 
