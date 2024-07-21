@@ -25,6 +25,7 @@ public class BookView {
             System.out.println("\t2. Agregar libros");
             System.out.println("\t3. Editar un libro");
             System.out.println("\t4. Obtener un libro por id");
+            System.out.println("\t5. Eliminar un libro");
             System.out.println("\t0. Salir");
             System.out.print("Ingrese una opción: ");
             option = scanner.nextInt();
@@ -42,6 +43,9 @@ public class BookView {
                     break;
                 case 4:
                     getBookById(scanner);
+                    break;
+                case 5:
+                    deleteBook(scanner);
                     break;
                 case 0:
                     System.out.println("\033[0;32m" + "Saliendo del programa" + "\033[0m");
@@ -131,7 +135,21 @@ public class BookView {
             System.out.println("-------- o --------");
         } else {
             System.out.println("\033[0;31m" + "Libro con id " + id + " no encontrado." + "\033[0m");
-        }
+        }   
+    }
+
+    public void deleteBook(Scanner scanner){
+        System.out.println("\n-- Eliminar Libro por id --");
+        System.out.print("\nIngrese el id del libro a eliminar: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        Book bookFound = bookController.getBookById(id);
         
+        if(bookFound != null){
+            bookController.deleteBook(id);
+        } else {
+            System.out.println("\033[0;31m" + "Libro con id " + id + " no encontrado." + "\033[0m");
+        }
     }
 }

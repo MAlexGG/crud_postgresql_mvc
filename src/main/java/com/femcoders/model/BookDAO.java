@@ -95,12 +95,29 @@ public class BookDAO {
             stmn.setString(2, book.getAuthor());
             stmn.setLong(3, book.getIsbn());
             stmn.setInt(4, book.getId());
-
             stmn.executeUpdate();
             System.out.println("\033[0;32m" + "\n¡Libro " + book.getTitle() + " actualizado con éxito!" + "\033[0m");
             
         } catch (Exception e) {
             System.out.println("\033[0;31m" + "No se ha actualizado el libro con id " + book.getId() + "\033[0m");
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }
+    }
+
+    public void deleteBook(int id){
+        try {
+            connection = DBManager.initConnection();
+
+            String sql = "DELETE FROM books WHERE id = ?";
+            stmn = connection.prepareStatement(sql);
+            stmn.setInt(1, id);
+            stmn.executeUpdate();
+            System.out.println("\033[0;32m" + "\n¡Libro con id " + id + " se ha eliminado con éxito!" + "\033[0m");
+
+        } catch (Exception e) {
+            System.out.println("\033[0;31m" + "No se ha eliminado el libro con id " + id + "\033[0m");
             System.out.println(e.getMessage());
         } finally {
             DBManager.closeConnection();

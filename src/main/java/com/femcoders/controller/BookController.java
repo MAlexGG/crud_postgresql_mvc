@@ -31,5 +31,8 @@ public class BookController {
         bookDAO.updateBook(book);
     }
 
+    public void deleteBook(int id){
+        bookDAO.deleteBook(id);
+    }
     
 }
