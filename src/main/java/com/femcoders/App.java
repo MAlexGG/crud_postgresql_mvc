@@ -1,5 +1,11 @@
 package com.femcoders;
 
+/* import java.util.List;
+
+import com.femcoders.controller.BookController;
+import com.femcoders.model.Book;
+import com.femcoders.model.BookDAO; */
+
 //import com.femcoders.model.DBManager;
 
 /* import com.femcoders.model.Book;
@@ -16,7 +22,7 @@ public class App
         DBManager.closeConnection(); 
         */
 
-        //PARA COMPROBAR addBook
+        //PARA COMPROBAR addBook del DAO
         /* 
         BookDAO model = new BookDAO();
 
@@ -30,7 +36,7 @@ public class App
         */
 
         
-        //PARA COMPROBAR getBooks
+        //PARA COMPROBAR getBooks del DAO
         /* 
         BookDAO model = new BookDAO();
         List<Book> books = model.getBooks();
@@ -39,6 +45,21 @@ public class App
             System.out.print("\n" + book.getId() + " - " + book.getTitle() + " - " + book.getAuthor() + " - " + book.getIsbn());
         } 
         */
+
+        //PARA COMPROBAR getBooks del controller
+        /* 
+        BookDAO bookDAO = new BookDAO();
+        BookController bookController = new BookController(bookDAO);
+
+        List<Book> books = bookController.getBooks();
+        for (Book book : books) {
+            System.out.println(book.getId());
+            System.out.println(book.getTitle());
+            System.out.println(book.getAuthor());
+            System.out.println(book.getIsbn());
+        }
+        */
+        
 
 
     }
