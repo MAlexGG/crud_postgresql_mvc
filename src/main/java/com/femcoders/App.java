@@ -1,8 +1,8 @@
 package com.femcoders;
 
-/* import com.femcoders.controller.BookController;
+import com.femcoders.controller.BookController;
 import com.femcoders.model.Book;
-import com.femcoders.model.BookDAO; */
+import com.femcoders.model.BookDAO;
 
 /* import java.util.List;
 
@@ -31,9 +31,8 @@ public class App
         BookDAO model = new BookDAO();
 
         Book book = new Book();
-        book.setId(1);
-        book.setTitle("title");
-        book.setAuthor("author");
+        book.setTitle("Delirius New York");
+        book.setAuthor("Rem Koolhaas");
         book.setIsbn(9876543456545L);
 
         model.addBook(book); 
@@ -65,12 +64,12 @@ public class App
         */
 
         //PARA COMPROBAR addBook del controller
-        /* 
-        Book book = new Book(1, "Delirius New York", "Rem Koolhaas", 1234567898765L);
+        
+        Book book = new Book("Delirius New York", "Rem Koolhaas", 1234567898765L);
         BookDAO bookDAO = new BookDAO();
         BookController bookController = new BookController(bookDAO);
         bookController.addBook(book);
-        */
+    
 
         
 

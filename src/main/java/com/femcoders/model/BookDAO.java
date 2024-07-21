@@ -44,13 +44,11 @@ public class BookDAO {
         try {
             connection = DBManager.initConnection();
 
-            String sql = "INSERT INTO books (id, title, author, isbn) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO books (title, author, isbn) VALUES (?,?,?)";
             stmn = connection.prepareStatement(sql);
-            stmn.setInt(1, book.getId());
-            stmn.setString(2, book.getTitle());
-            stmn.setString(3, book.getAuthor());
-            stmn.setLong(4, book.getIsbn());
-
+            stmn.setString(1, book.getTitle());
+            stmn.setString(2, book.getAuthor());
+            stmn.setLong(3, book.getIsbn());
             stmn.executeUpdate();
             /* System.out.println("\033[0;32m" + "\n¡Libro creado con éxito!" + "\033[0m"); */
         } catch (Exception e) {

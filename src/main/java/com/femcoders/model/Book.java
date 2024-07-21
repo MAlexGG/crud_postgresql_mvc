@@ -9,8 +9,8 @@ public class Book {
 
     public Book(){}
 
-    public Book(int id, String title, String author, Long isbn){
-        this.id = id;
+    public Book(String title, String author, Long isbn){
+        
         this.title = title;
         this.author = author;
         this.isbn = isbn;
