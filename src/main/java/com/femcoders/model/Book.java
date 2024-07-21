@@ -10,7 +10,6 @@ public class Book {
     public Book(){}
 
     public Book(String title, String author, Long isbn){
-        
         this.title = title;
         this.author = author;
         this.isbn = isbn;

@@ -20,7 +20,15 @@ public class BookController {
 
     public void addBook(Book book){
         bookDAO.addBook(book);
-        System.out.println("\033[0;32m" + "\n¡Libro " + book.getTitle() + " creado con éxito!" + "\033[0m");
+    }
+
+    public Book getBookById(int id){
+        Book book = bookDAO.getBookById(id);
+        return book;
+    }
+
+    public void updateBook(Book book){
+        bookDAO.updateBook(book);
     }
 
     

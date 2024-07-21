@@ -50,9 +50,57 @@ public class BookDAO {
             stmn.setString(2, book.getAuthor());
             stmn.setLong(3, book.getIsbn());
             stmn.executeUpdate();
-            /* System.out.println("\033[0;32m" + "\n¡Libro creado con éxito!" + "\033[0m"); */
+            System.out.println("\033[0;32m" + "\n¡Libro " + book.getTitle() + " creado con éxito!" + "\033[0m");
         } catch (Exception e) {
-            System.out.println("\033[0;31m" + "Conexión fallida" + "\033[0m");
+            System.out.println("\033[0;31m" + "No se ha creado el libro " + book.getTitle() + "\033[0m");
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }
+    }
+
+    public Book getBookById(int id){
+        try {
+            connection = DBManager.initConnection();
+
+            String sql = "SELECT id, title, author, isbn FROM books WHERE id = ?";
+            stmn = connection.prepareStatement(sql);
+            stmn.setInt(1, id);
+            ResultSet result = stmn.executeQuery();
+            
+            if (result.next()) {
+                Book book = new Book();
+                book.setId(result.getInt("id"));
+                book.setTitle(result.getString("title"));
+                book.setAuthor(result.getString("author"));
+                book.setIsbn(result.getLong("isbn"));
+                return book;
+            }
+        } catch (Exception e) {
+            System.out.println("\033[0;31m" + "No se ha encontrado el libro con id " + id + "\033[0m");
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }
+        return null;
+    }
+
+    public void updateBook(Book book){
+        try {
+            connection = DBManager.initConnection();
+
+            String sql = "UPDATE books SET title = ?, author = ?, isbn = ? WHERE id = ?";
+            stmn = connection.prepareStatement(sql);
+            stmn.setString(1, book.getTitle());
+            stmn.setString(2, book.getAuthor());
+            stmn.setLong(3, book.getIsbn());
+            stmn.setInt(4, book.getId());
+
+            stmn.executeUpdate();
+            System.out.println("\033[0;32m" + "\n¡Libro " + book.getTitle() + " actualizado con éxito!" + "\033[0m");
+            
+        } catch (Exception e) {
+            System.out.println("\033[0;31m" + "No se ha actualizado el libro con id " + book.getId() + "\033[0m");
             System.out.println(e.getMessage());
         } finally {
             DBManager.closeConnection();
