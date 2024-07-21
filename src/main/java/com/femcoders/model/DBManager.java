@@ -17,7 +17,7 @@ public class DBManager {
     public static Connection initConnection() {
         try {
             connection = DriverManager.getConnection(url, user, pass);
-            System.out.println("\033[0;32m" + "\n¡Conectado con éxito!" + "\033[0m");
+            //System.out.println("\033[0;32m" + "\n¡Conectado con éxito!" + "\033[0m");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -27,7 +27,7 @@ public class DBManager {
     public static void closeConnection(){
         try {
             connection.close();
-            System.out.println("\033[0;32m" + "Has salido del sistema correctamente" + "\033[0m");
+            //System.out.println("\033[0;32m" + "Has salido del sistema correctamente" + "\033[0m");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

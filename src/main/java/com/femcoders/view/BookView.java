@@ -1,5 +1,6 @@
 package com.femcoders.view;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.femcoders.controller.BookController;
@@ -29,24 +30,34 @@ public class BookView {
 
             switch (option) {
                 case 1:
-                    bookController.getBooks();
+                    getBooks();
                     break;
                 case 2:
                     addBook(scanner);
                     break;
                 case 0:
-                    System.out.println("Saliendo del programa");
+                    System.out.println("\033[0;32m" + "Saliendo del programa" + "\033[0m");
+                    System.exit(0);
                     break;
                 default:
-                    System.out.println("Opción no válida. Intente de nuevo.");
+                    System.out.println("\033[0;31m" + "Opción no válida. Intente de nuevo." + "\033[0m");
                     break;
             }
-
-
 
         } while (option != 0);
 
         scanner.close();
+    }
+
+    private void getBooks(){
+        List<Book> books = bookController.getBooks();
+        for (Book book : books) {
+            System.out.println(book.getId());
+            System.out.println(book.getTitle());
+            System.out.println(book.getAuthor());
+            System.out.println(book.getIsbn());
+            System.out.println("-------- o --------");
+        }
     }
 
     private void addBook(Scanner scanner){
