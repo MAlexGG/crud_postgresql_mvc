@@ -14,7 +14,7 @@ import com.femcoders.controller.BookController;
 import com.femcoders.model.Book;
 import com.femcoders.model.BookDAO; */
 
-//import com.femcoders.model.DBManager;
+//import com.femcoders.config.DBManager;
 
 /* import com.femcoders.model.Book;
 import com.femcoders.model.BookDAO; */

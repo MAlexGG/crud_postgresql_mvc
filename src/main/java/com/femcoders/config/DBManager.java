@@ -1,4 +1,4 @@
-package com.femcoders.model;
+package com.femcoders.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

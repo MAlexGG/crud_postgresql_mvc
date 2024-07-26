@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.femcoders.config.DBManager;
+
 
 public class BookDAO {
 
