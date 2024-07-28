@@ -9,7 +9,7 @@ import java.util.List;
 import com.femcoders.config.DBManager;
 
 
-public class BookDAO {
+public class BookDAO implements BookDAOInterface{
 
     private PreparedStatement stmn;
     private Connection connection = null;
