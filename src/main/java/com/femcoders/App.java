@@ -2,6 +2,7 @@ package com.femcoders;
 
 import com.femcoders.controller.BookController;
 import com.femcoders.model.BookDAO;
+import com.femcoders.model.BookDAOInterface;
 import com.femcoders.view.BookView;
 
 /* import com.femcoders.controller.BookController;
@@ -45,7 +46,7 @@ public class App
         
         //PARA COMPROBAR getBooks del DAO
         /* 
-        BookDAO model = new BookDAO();
+        BookDAOInterface model = new BookDAO();
         List<Book> books = model.getBooks();
 
         for (Book book : books) {
@@ -55,7 +56,7 @@ public class App
 
         //PARA COMPROBAR getBooks del controller
         /* 
-        BookDAO bookDAO = new BookDAO();
+       BookDAOInterface bookDAO = new BookDAO();
         BookController bookController = new BookController(bookDAO);
 
         List<Book> books = bookController.getBooks();
@@ -71,12 +72,12 @@ public class App
         
         /*
         Book book = new Book("Delirius New York", "Rem Koolhaas", 1234567898765L);
-        BookDAO bookDAO = new BookDAO();
+        BookDAOInterface bookDAO = new BookDAO();
         BookController bookController = new BookController(bookDAO);
         bookController.addBook(book);
         */
 
-        BookDAO bookDAO = new BookDAO();
+        BookDAOInterface bookDAO = new BookDAO();
         BookController bookController = new BookController(bookDAO);
         BookView bookView = new BookView(bookController);
 
