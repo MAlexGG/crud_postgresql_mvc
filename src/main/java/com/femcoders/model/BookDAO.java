@@ -12,7 +12,7 @@ import com.femcoders.config.DBManager;
 public class BookDAO implements BookDAOInterface{
 
     private PreparedStatement stmn;
-    private Connection connection = null;
+    private Connection connection;
 
     public List<Book> getBooks(){
         List<Book> books = new ArrayList<>();

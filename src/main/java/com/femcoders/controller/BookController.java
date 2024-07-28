@@ -3,36 +3,36 @@ package com.femcoders.controller;
 import java.util.List;
 
 import com.femcoders.model.Book;
-import com.femcoders.model.BookDAO;
+import com.femcoders.model.BookDAOInterface;
 
 public class BookController {
 
-    private BookDAO bookDAO;
+    private BookDAOInterface bookDAOInterface;
 
-    public BookController(BookDAO bookDAO){
-        this.bookDAO = bookDAO;
+    public BookController(BookDAOInterface bookDAOInterface){
+        this.bookDAOInterface = bookDAOInterface;
     }
 
     public List<Book> getBooks(){
-        List<Book> books = bookDAO.getBooks();
+        List<Book> books = bookDAOInterface.getBooks();
         return books;
     } 
 
     public void addBook(Book book){
-        bookDAO.addBook(book);
+        bookDAOInterface.addBook(book);
     }
 
     public Book getBookById(int id){
-        Book book = bookDAO.getBookById(id);
+        Book book = bookDAOInterface.getBookById(id);
         return book;
     }
 
     public void updateBook(Book book){
-        bookDAO.updateBook(book);
+        bookDAOInterface.updateBook(book);
     }
 
     public void deleteBook(int id){
-        bookDAO.deleteBook(id);
+        bookDAOInterface.deleteBook(id);
     }
     
 }
