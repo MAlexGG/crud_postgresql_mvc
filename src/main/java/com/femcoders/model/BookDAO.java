@@ -14,6 +14,7 @@ public class BookDAO implements BookDAOInterface{
     private PreparedStatement stmn;
     private Connection connection;
 
+    @Override
     public List<Book> getBooks(){
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM books ORDER BY id";
@@ -42,6 +43,7 @@ public class BookDAO implements BookDAOInterface{
         return books;
     }
 
+    @Override
     public void addBook(Book book){
         try {
             connection = DBManager.initConnection();
@@ -61,6 +63,7 @@ public class BookDAO implements BookDAOInterface{
         }
     }
 
+    @Override
     public Book getBookById(int id){
         try {
             connection = DBManager.initConnection();
@@ -87,6 +90,7 @@ public class BookDAO implements BookDAOInterface{
         return null;
     }
 
+    @Override
     public void updateBook(Book book){
         try {
             connection = DBManager.initConnection();
@@ -108,6 +112,7 @@ public class BookDAO implements BookDAOInterface{
         }
     }
 
+    @Override
     public void deleteBook(int id){
         try {
             connection = DBManager.initConnection();
