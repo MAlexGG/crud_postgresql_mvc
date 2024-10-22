@@ -9,7 +9,7 @@ public class DBManager {
     
     static Dotenv dotenv = Dotenv.load();
 
-    private static final String url = "jdbc:postgresql://localhost:5432/prueba3";
+    private static final String url = "jdbc:postgresql://localhost:5432/library";
     private static final String user = dotenv.get("DB_USER");
     private static final String pass = dotenv.get("DB_PASS");
     private static Connection connection;
